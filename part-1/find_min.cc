@@ -1,5 +1,9 @@
-
-// TODO: Add the following header files algorithm, array, cstdlib,
+#include <algorithm>
+#include <array>
+#include <cstdlib>
+#include <iostream>
+#include <random>
+//Add the following header files algorithm, array, cstdlib,
 // iostream, random
 
 using namespace std;
@@ -73,7 +77,9 @@ const int number_elements = 10;
 /// \param message The programmer defined string that specifies the current
 /// error.
 void ErrorMessage(const string& message) {
-  // TODO: implement ErrorMessage
+  // implement ErrorMessage
+  cout << message << "\n";
+  cout << "There was an error. Exiting.\n";
 }
 
 /// PrintArray print out the elements of \p the_array each on a line of
@@ -102,6 +108,17 @@ void ErrorMessage(const string& message) {
 void PrintArray(const array<int, number_elements>& the_array) {
   // TODO: Implement the function such that it prints out each element of
   // the given array, one element per line.
+  /*for(int index = 0; index < the_array.size(); index++){
+    try{
+        cout << the_array.at(index) << "\n";
+    }catch(const exception& e){
+      ErrorMessage("error with the element function");
+      exit(1);
+    }
+  }*/
+  for(const auto& element : the_array){
+    cout << element <<"\n";
+  }
 }
 
 /// FillArray filles \p the_array with random numbers given by
@@ -116,7 +133,18 @@ void PrintArray(const array<int, number_elements>& the_array) {
 /// \sa RandomNumberGenerator::next()
 void FillArray(array<int, number_elements>& the_array,
                RandomNumberGenerator& random_number_generator) {
+                 /*for(int index = 0; index < the_array.size(); index++){
+                   try{
+                     the_array.at(index) = random_number_generator.next();
+                   }catch(const exception& e){
+                     ErrorMessage("problem with the random number");
+                     
+                   }
+                 }*/
   // TODO: assign a random number to each element in the array using
+  for(auto& element : the_array){
+    element = random_number_generator.next();
+  }
   // random_number_generator.next().
 }
 
@@ -135,7 +163,20 @@ void FillArray(array<int, number_elements>& the_array,
 ///
 /// \returns The minimum/smallest value in the array
 int FindMinimum(const array<int, number_elements>& the_array) {
+  int the_minimum = 0;
+  try{
+    the_minimum = the_array.at(0);
+  }catch (const exception& e){
+    ErrorMessage("error at the findmin");
+    exit(1);
+  }
+  for (const auto& element : the_array){
+    if(element < the_minimum){
+      the_minimum = element;
+    }
+  }
   // TODO: Find the minimum value in the array.
+  return the_minimum;
 }
 
 /// Entry point to the find_min program
@@ -155,11 +196,24 @@ int main(int argc, char* argv[]) {
   int maximum_number = 0;
   // TODO: convert argv_one_minimum and argv_two_maximum to integers and
   // assign to minimum_number and maximum_number.
-
+  try{
+    minimum_number = stoi(argv_one_minimum);
+  }catch(const exception& e){
+    ErrorMessage("The problem is arg 1");
+    exit(1);
+  }try{
+    maximum_number = stoi(argv_two_maximum);
+  }catch(const exception& e){
+    ErrorMessage("The problem is arg 2");
+    return(1);
+  }
   // TODO: Check to make sure minimum_number is less than maximum_number,
   // and that both of them are greater than zero. Otherwise, print an 
   // error message an exit.
-
+if(maximum_number <= minimum_number || maximum_number <= 0 || minimum_number <=0){
+  ErrorMessage("min is greater than max");
+  return(1);
+}
   RandomNumberGenerator rng(minimum_number, maximum_number);
   array<int, number_elements> random_numbers{};
 
