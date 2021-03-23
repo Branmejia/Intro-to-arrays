@@ -119,7 +119,7 @@ void PrintArray(const array<int, number_elements>& the_array) {
   for(const auto& element : the_array){
     cout << element << "\n";
   }
-  // TODO: Implement the function such that it prints out each element of
+  // Implement the function such that it prints out each element of
   // the given array, one element per line.
   // You must use a range-for loop.
 }
@@ -140,7 +140,7 @@ void FillArray(array<int, number_elements>& the_array,
                    element = random_number_generator.next();
                  }
 
-  // TODO: assign a random number to each element in the array using
+  // assign a random number to each element in the array using
   // random_number_generator.next().
   // You must use a range-for loop
 }
@@ -170,7 +170,7 @@ float CalculateAverage(const array<int, number_elements>& the_array) {
     }
   //for(auto the_array)
 
-  // TODO: Calculate the average of the values contained in the array
+  //Calculate the average of the values contained in the array
   
 
 
@@ -200,7 +200,7 @@ int main(int argc, char* argv[]) {
     ErrorMessage("The problem is arg 2");
     exit(1);
   }
-  // TODO: convert argv_one_minimum and argv_two_maximum to integers and
+  //convert argv_one_minimum and argv_two_maximum to integers and
   // assign to minimum_number and maximum_number.
   /*int maxtoint(argv_one_minimum, argv_two_maximum){
     int minimum_number = 0;
@@ -209,7 +209,7 @@ int main(int argc, char* argv[]) {
     maximum_number = stoi(argv[2]);
     return maximum_number&& maximum_number;
   }*/
-  // TODO: Check to make sure minimum_number is less than maximum_number,
+  // Check to make sure minimum_number is less than maximum_number,
   // and that both of them are greater than zero. Otherwise, print an 
   // error message an exit.
     if(maximum_number <= minimum_number || maximum_number <= 0 || minimum_number <=0){
