@@ -117,7 +117,7 @@ void PrintArray(const array<int, number_elements>& the_array) {
     }
   }*/
   for(const auto& element : the_array){
-    cout << element <<"\n";
+    cout << element << "\n";
   }
 }
 
