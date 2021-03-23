@@ -1,3 +1,13 @@
+//Brandon Mejia
+//CPSC 120-02
+//2021-03-22
+//branmejia21@csu.fullerton.edu
+//@branmejia
+//
+//Lab 06-01
+//
+//This finds the minnimum of the numbers provided
+//
 #include <algorithm>
 #include <array>
 #include <cstdlib>
