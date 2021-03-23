@@ -116,7 +116,7 @@ void ErrorMessage(const string& message) {
 ///
 /// \param the_array This is the array of integers created in the main function.
 void PrintArray(const array<int, number_elements>& the_array) {
-  // TODO: Implement the function such that it prints out each element of
+  // Implement the function such that it prints out each element of
   // the given array, one element per line.
   /*for(int index = 0; index < the_array.size(); index++){
     try{
@@ -151,7 +151,7 @@ void FillArray(array<int, number_elements>& the_array,
                      
                    }
                  }*/
-  // TODO: assign a random number to each element in the array using
+  // assign a random number to each element in the array using
   for(auto& element : the_array){
     element = random_number_generator.next();
   }
@@ -185,7 +185,7 @@ int FindMinimum(const array<int, number_elements>& the_array) {
       the_minimum = element;
     }
   }
-  // TODO: Find the minimum value in the array.
+  // Find the minimum value in the array.
   return the_minimum;
 }
 
@@ -204,7 +204,7 @@ int main(int argc, char* argv[]) {
   string argv_two_maximum = string(argv[2]);
   int minimum_number = 0;
   int maximum_number = 0;
-  // TODO: convert argv_one_minimum and argv_two_maximum to integers and
+  // convert argv_one_minimum and argv_two_maximum to integers and
   // assign to minimum_number and maximum_number.
   try{
     minimum_number = stoi(argv_one_minimum);
@@ -217,7 +217,7 @@ int main(int argc, char* argv[]) {
     ErrorMessage("The problem is arg 2");
     return(1);
   }
-  // TODO: Check to make sure minimum_number is less than maximum_number,
+  // Check to make sure minimum_number is less than maximum_number,
   // and that both of them are greater than zero. Otherwise, print an 
   // error message an exit.
 if(maximum_number <= minimum_number || maximum_number <= 0 || minimum_number <=0){
