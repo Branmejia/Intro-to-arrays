@@ -227,7 +227,7 @@ try{
     ErrorMessage("The problem is arg 2");
     exit(1);
   }
-  // TODO: Check to make sure minimum_number is less than maximum_number,
+  // Check to make sure minimum_number is less than maximum_number,
   // and that both of them are greater than zero. Otherwise, print an 
   // error message an exit.
   if(maximum_number <= minimum_number || maximum_number <= 0 || minimum_number <=0){
@@ -262,7 +262,7 @@ try{
       last_guess = guess;
     }
   }
-  // TODO: Write a game loop which will prompt the player for their
+  // Write a game loop which will prompt the player for their
   // guess. When the guess is correct, prompt the user with:
   // "\tHooray! You guessed the secret number!!\n";
   // "Do you want to play again? (y or n)> ";
